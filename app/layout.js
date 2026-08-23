@@ -3,6 +3,7 @@ import "./globals.css";
 import Header from "@/components/header";
 import { ClerkProvider } from "@clerk/nextjs";
 import { Toaster } from "sonner";
+import FinanceChatbot from "@/components/finance-chatbot";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -21,6 +22,7 @@ export default function RootLayout({ children }) {
         <body className={`${inter.className}`}>
           <Header />
           <main className="min-h-screen">{children}</main>
+          <FinanceChatbot />
           <Toaster richColors />
 
           <footer className="bg-blue-50 py-12">
