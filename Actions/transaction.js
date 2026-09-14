@@ -9,6 +9,7 @@ import { request } from "@arcjet/next";
 
 const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY);
 
+
 const serializeAmount = (obj) => ({
   ...obj,
   amount: obj.amount.toNumber(),
@@ -230,7 +231,9 @@ export async function getUserTransactions(query = {}) {
 // Scan Receipt
 export async function scanReceipt(file) {
   try {
-    const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" });
+   
+    const model = genAI.getGenerativeModel({ model: "gemini-3.5-flash" });
+    
 
     // Convert File to ArrayBuffer
     const arrayBuffer = await file.arrayBuffer();
